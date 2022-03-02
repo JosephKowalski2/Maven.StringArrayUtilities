@@ -1,6 +1,8 @@
 package com.zipcodewilmington;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * Created by leon on 1/29/18.
@@ -52,7 +54,10 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        return null;
+        List<String> temp = Arrays.asList(array);
+        Collections.reverse(temp);
+        String[] resultReverse = temp.toArray(array);
+        return resultReverse;
     }
 
     /**
