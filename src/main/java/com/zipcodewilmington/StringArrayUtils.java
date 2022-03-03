@@ -55,13 +55,6 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-//        String [] resultReverse = array;
-//        for (int i = 0; i < resultReverse.length / 2; i++){
-//            String temp = resultReverse[i];
-//            resultReverse[i] = resultReverse[resultReverse.length - i - 1];
-//            resultReverse[resultReverse.length - i - 1] = temp;
-//        }
-//        return resultReverse;
         ArrayList <String> resultReverse = new ArrayList<String>();
         for (int i = array.length - 1; i >= 0; i--){
             resultReverse.add(array[i]);
@@ -74,24 +67,6 @@ public class StringArrayUtils {
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
     public static boolean isPalindromic(String[] array) {
-//        String [] result = StringArrayUtils.reverse(array25);
-//        System.out.println(Arrays.toString(array25));
-//        System.out.println(Arrays.toString(result));
-//        boolean reSult = array25 == result;
-//        System.out.println(reSult);
-//        return reSult;
-
-//        ArrayList<String> resultReverse2 = new ArrayList<>();
-//        for (int i = 0; i < array25.length / 2; i++){
-//            resultReverse2.add(array25[i]);
-
-//            String temp = resultReverse2[i];
-//            resultReverse2[i] = resultReverse2[resultReverse2.length - i - 1];
-//            resultReverse2[resultReverse2.length - i - 1] = temp;
-//        }
-//        resultReverse2.toArray(new String[resultReverse2.size()]);
-//        System.out.println(Arrays.toString(array25));
-//        System.out.println(Arrays.toString(resultReverse2));
         return Arrays.equals(StringArrayUtils.reverse(array), array);
     }
 
@@ -100,7 +75,16 @@ public class StringArrayUtils {
      * @return true if each letter in the alphabet has been used in the array
      */ // TODO
     public static boolean isPangramic(String[] array) {
-        return false;
+        Boolean lowerCase;
+        Boolean upperCase;
+        Boolean result = true;
+        String arrayString = Arrays.toString(array);
+        for (int i = 0; i < 26; i++){
+            upperCase = arrayString.contains(Character.toString((char)('A' + i)));
+            lowerCase = arrayString.contains(Character.toString((char)('a' + i)));
+            result = (upperCase) || (lowerCase);
+        }
+        return result;
     }
 
     /**
