@@ -3,6 +3,8 @@ package com.zipcodewilmington;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.assertFalse;
+
 public class IsPalindromicTest {
 
 

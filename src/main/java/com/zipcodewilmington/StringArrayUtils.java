@@ -1,5 +1,6 @@
 package com.zipcodewilmington;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -54,9 +55,12 @@ public class StringArrayUtils {
      * @return an array with identical contents in reverse order
      */ // TODO
     public static String[] reverse(String[] array) {
-        List<String> temp = Arrays.asList(array);
-        Collections.reverse(temp);
-        String[] resultReverse = temp.toArray(array);
+        String [] resultReverse = array;
+        for (int i = 0; i < resultReverse.length / 2; i++){
+            String temp = resultReverse[i];
+            resultReverse[i] = resultReverse[resultReverse.length - i - 1];
+            resultReverse[resultReverse.length - i - 1] = temp;
+        }
         return resultReverse;
     }
 
@@ -64,8 +68,26 @@ public class StringArrayUtils {
      * @param array array of String objects
      * @return true if the order of the array is the same backwards and forwards
      */ // TODO
-    public static boolean isPalindromic(String[] array) {
-        return false;
+    public static boolean isPalindromic(String[] array25) {
+//        String [] result = StringArrayUtils.reverse(array25);
+//        System.out.println(Arrays.toString(array25));
+//        System.out.println(Arrays.toString(result));
+//        boolean reSult = array25 == result;
+//        System.out.println(reSult);
+//        return reSult;
+
+        ArrayList<String> resultReverse2 = new ArrayList<>();
+        for (int i = 0; i < array25.length / 2; i++){
+            resultReverse2.add(array25[i]);
+
+//            String temp = resultReverse2[i];
+//            resultReverse2[i] = resultReverse2[resultReverse2.length - i - 1];
+//            resultReverse2[resultReverse2.length - i - 1] = temp;
+        }
+        resultReverse2.toArray(new String[resultReverse2.size()]);
+//        System.out.println(Arrays.toString(array25));
+//        System.out.println(Arrays.toString(resultReverse2));
+        return Arrays.equals(array25, new ArrayList[]{resultReverse2});
     }
 
     /**
