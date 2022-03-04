@@ -146,8 +146,20 @@ public class StringArrayUtils {
             else if (array[i].equals(array[i + 1])){
                 addAtIndex += array[i];
             }
+            else {
+                if (i == 0){
+                    consecPack.add(array[0]);
+                }
+                else if (array[i].equals(array[i - 1])) {
+                    addAtIndex += array[i];
+                    consecPack.add(addAtIndex);
+                    addAtIndex = "";
+                } else {
+                    consecPack.add(array[i]);
+                }
+            }
         }
-        return null;
+        return consecPack.toArray(new String[consecPack.size()]);
     }
 
 
