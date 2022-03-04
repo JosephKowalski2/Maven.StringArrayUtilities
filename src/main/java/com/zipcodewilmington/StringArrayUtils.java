@@ -135,7 +135,7 @@ public class StringArrayUtils {
         String addAtIndex = "";
         for (int i = 0; i < array.length; i++){
             if (i == array.length - 1){
-                if (array[i] == array[i - 1]){
+                if (array[i].equals(array[i - 1])){
                     addAtIndex += array[i];
                     consecPack.add(addAtIndex);
                 }
@@ -143,7 +143,7 @@ public class StringArrayUtils {
                     consecPack.add(array[i]);
                 }
             }
-            else if (array[i] == array[i + 1]){
+            else if (array[i].equals(array[i + 1])){
                 addAtIndex += array[i];
             }
         }
